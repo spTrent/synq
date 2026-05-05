@@ -1,0 +1,16 @@
+replicaCount: 1
+
+backend:
+  image: backend:latest
+  dbHost: dev-postgres
+  dbName: synq
+  dbUser: postgres
+  dbPassword: postgres
+  redisHost: dev-redis
+
+frontend:
+  image: frontend:latest
+
+ingress:
+  enabled: true
+  host: synq.dev.local

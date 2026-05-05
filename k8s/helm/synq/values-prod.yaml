@@ -1,0 +1,16 @@
+replicaCount: 3
+
+backend:
+  image: backend:prod-v1
+  dbHost: prod-postgres
+  dbName: synq_prod
+  dbUser: admin
+  dbPassword: very-secure-password
+  redisHost: prod-redis
+
+frontend:
+  image: frontend:prod-v1
+
+ingress:
+  enabled: true
+  host: synq.example.com

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Black">
+    <option name="sdkName" value="3.13 WSL (Ubuntu): (/usr/bin/python3)" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="3.13 WSL (Ubuntu): (/home/sptrent/synq/backend/.venv/bin/python3.13)" project-jdk-type="Python SDK" />
+</project>

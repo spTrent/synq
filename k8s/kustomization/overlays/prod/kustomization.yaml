@@ -1,0 +1,27 @@
+resources:
+- ../../base
+
+namePrefix: prod-
+
+configMapGenerator:
+- name: synq-config
+  literals:
+  - DB_HOST=prod-postgres
+  - API_PREFIX=/api/v1
+
+secretGenerator:
+- name: synq-secrets
+  literals:
+  - DB_PORT=5432
+  - DB_NAME=synq_prod
+  - DB_USER=admin
+  - DB_PASSWORD=very-secure-password
+  - ALGORITHM=HS256
+  - SECRET=super-secret-prod-key
+  - EMAIL_LOGIN=prod-email@example.com
+  - EMAIL_PASSWORD=prod-password
+  - SMTP_HOST=smtp.gmail.com
+  - SMTP_PORT=587
+  - CODE_EXPIRES_IN=600
+  - REDIS_HOST=prod-redis
+  - REDIS_PORT=6379

@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.auth_routes import auth
 from app.api.profile_routes import profile
 from app.config import settings
+from app.monitoring import setup_monitoring
 
 app = FastAPI(title='SYNQ')
 app.add_middleware(
@@ -13,7 +14,8 @@ app.add_middleware(
     allow_origins=[
         'http://127.0.0.1:5173',
         'http://localhost:5173',
-        'http://localhost:8000'
+        'http://localhost:8000',
+        'http://synq.local'
     ],
     allow_credentials=True,
     allow_methods=['*'],
@@ -21,3 +23,5 @@ app.add_middleware(
 )
 app.include_router(auth, prefix=settings.api_prefix)
 app.include_router(profile, prefix=settings.api_prefix)
+
+setup_monitoring(app)

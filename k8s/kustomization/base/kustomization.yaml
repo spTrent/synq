@@ -1,0 +1,7 @@
+resources:
+- backend.yaml
+- frontend.yaml
+- ingress.yaml
+- hpa.yaml
+
+# Note: configmap and secret will be generated or referenced in overlays

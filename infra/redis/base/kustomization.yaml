@@ -1,0 +1,4 @@
+resources:
+- deployment.yaml
+
+# Redis service is usually part of the deployment file if it was copied that way

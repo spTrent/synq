@@ -17,6 +17,7 @@ from app.api.schemas import (
     EmailConfirmation,
     UserResponse,
 )
+from app.monitoring import count_registration
 
 auth = APIRouter(prefix='/auth', tags=['auth'])
 
@@ -27,11 +28,14 @@ async def registry(
     auth: AuthUseCases = Depends(get_auth_use_cases),
 ) -> bool:
     try:
-        return auth.register(
+        res = auth.register(
             email=account.email,
             username=account.username,
             password=account.password,
         )
+        if res:
+            count_registration()
+        return res
     except AccountAlreadyExist as err:
         raise HTTPException(status_code=409, detail=str(err)) from err
     except UsernameAlreadyExist as err:

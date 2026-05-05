@@ -1,0 +1,28 @@
+resources:
+- ../../base
+
+namePrefix: dev-
+
+configMapGenerator:
+- name: synq-config
+  literals:
+  - DB_HOST=dev-postgres
+  - API_PREFIX=/api/v1
+  - ENABLE_METRICS=true
+
+secretGenerator:
+- name: synq-secrets
+  literals:
+  - DB_PORT=5432
+  - DB_NAME=synq
+  - DB_USER=postgres
+  - DB_PASSWORD=postgres
+  - ALGORITHM=HS256
+  - SECRET=jestkiykluch
+  - EMAIL_LOGIN=KING7EMERALD@yandex.com
+  - EMAIL_PASSWORD=hgemfdjoimlcmmxg
+  - SMTP_HOST=smtp.yandex.ru
+  - SMTP_PORT=465
+  - CODE_EXPIRES_IN=600
+  - REDIS_HOST=dev-redis
+  - REDIS_PORT=6379

@@ -1,6 +1,6 @@
 version = 1
 revision = 3
-requires-python = "==3.13"
+requires-python = "==3.13.*"
 
 [[package]]
 name = "alembic"
@@ -82,7 +82,7 @@ requires-dist = [
     { name = "greenlet", specifier = ">=3.3.2" },
     { name = "psycopg", specifier = ">=3.3.3" },
     { name = "psycopg2", specifier = ">=2.9.11" },
-    { name = "pydantic", extras = ["email", "mypy"], specifier = ">=2.12.5" },
+    { name = "pydantic", extras = ["email"], specifier = ">=2.12.5" },
     { name = "pydantic-settings", specifier = ">=2.13.1" },
     { name = "pyjwt", specifier = ">=2.12.1" },
     { name = "redis", specifier = ">=7.4.0" },

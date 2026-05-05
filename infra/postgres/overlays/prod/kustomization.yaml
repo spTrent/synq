@@ -1,0 +1,12 @@
+resources:
+- ../../base
+
+namePrefix: prod-
+
+secretGenerator:
+- name: postgres-secret
+  behavior: replace
+  literals:
+  - username=admin
+  - password=very-secure-password
+  - database=synq_prod
